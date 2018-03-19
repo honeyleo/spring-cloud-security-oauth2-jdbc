@@ -1,4 +1,4 @@
-package cn.com.sina.alan.oauth;
+/*package cn.com.sina.alan.oauth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
 
-/**
+*//**
  * to use share jdbc to store token and authenticate token
- */
+ *//*
 @SpringBootApplication
 @Configuration
 @EnableResourceServer
@@ -74,3 +74,4 @@ public class ResourceApplication extends ResourceServerConfigurerAdapter {
     }
 
 }
+*/

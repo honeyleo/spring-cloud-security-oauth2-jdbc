@@ -31,7 +31,9 @@ public class ResourceApplication extends ResourceServerConfigurerAdapter {
     @Bean
     public RemoteTokenServices remoteTokenServices() {
         RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
-        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:8080/oauth/check_token");
+        remoteTokenServices.setClientId("client");
+        remoteTokenServices.setClientSecret("secret");
+        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:8080/uaa/oauth/check_token");
         return remoteTokenServices;
     }
 
@@ -57,7 +59,9 @@ public class ResourceApplication extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(HttpMethod.GET, "/hello").authenticated();
+    	http.
+		anonymous().disable();
+        http.authorizeRequests().antMatchers(HttpMethod.GET, "/hello").hasAuthority("ROLE_UNITY");
         //.antMatchers(HttpMethod.POST, "/foo").hasAuthority("FOO_WRITE");
         //you can implement it like this, but I show method invocation security on write
     }

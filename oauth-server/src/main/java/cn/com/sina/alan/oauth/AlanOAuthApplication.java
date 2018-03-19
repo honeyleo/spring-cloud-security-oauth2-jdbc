@@ -21,12 +21,12 @@ public class AlanOAuthApplication {
         SpringApplication.run(AlanOAuthApplication.class, args);
     }
 
-    @Autowired
-    private AuthenticationProvider authenticationProvider;
-
-    @Bean
-    public AuthenticationManager authenticationManager() {
-        return new ProviderManager(Arrays.asList(authenticationProvider));
-    }
+//    @Autowired
+//    private AuthenticationProvider authenticationProvider;
+//
+//    @Bean
+//    public AuthenticationManager authenticationManager() {
+//        return new ProviderManager(Arrays.asList(authenticationProvider));
+//    }
 
 }

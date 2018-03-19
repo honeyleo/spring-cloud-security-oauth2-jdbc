@@ -8,3 +8,7 @@ target/*
 .idea/*
 .idea/*.xml
 .idea/workspace.xml
+.settings
+.classpath
+.project
+.DS_Store

@@ -59,8 +59,8 @@ public class OAuthConfiguration extends ResourceServerConfigurerAdapter {
 		}, AbstractPreAuthenticatedProcessingFilter.class);
 
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/service2").hasAuthority("ROLE_MOBILE");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/service22").hasAuthority("ROLE_UNITY");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/mobile").hasAuthority("ROLE_MOBILE");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/unity").hasAuthority("ROLE_UNITY");
 //		http.authorizeRequests().anyRequest().authenticated();
 	}
 

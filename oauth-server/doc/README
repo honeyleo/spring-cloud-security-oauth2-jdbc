@@ -1,0 +1,8 @@
+oauth2.0中包含两种权限：用户权限，和客户端权限。
+1. 客户端的authorities用于限制客户端模式时客户端的权限，grant_type=client_credentials这种授权模式，仅当client_details中的authorities包含访问的资源的权限时才能访问
+示例：客户端授权模式时，用client_id=unity-client的客户端获取的access_token，去访问URL为“/mobile”，则权限验证不通过，但是去访问URL为“/unity”则通过
+
+2.密码模式时，用户权限限定了用户访问资源的接口权限
+示例：用户名为mobile的用户拥有ROLE_MOBILE权限，用密码模式授权成功获取access_token后，去访问接口“/mobile”可以通过，但是访问接口“/unity”则不通过
+
+备注：用户授权client调用资源服务器（oauth2-resource）上的接口，那么该client的属性resource_ids必须包含该资源（oauth2-resource），同时用户也要有该资源的接口的权限

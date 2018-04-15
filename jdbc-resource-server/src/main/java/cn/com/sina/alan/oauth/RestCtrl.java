@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestCtrl {
 
-	@RequestMapping("/service2")
+	@RequestMapping("/unity")
     public String home() {
-        return "resource2 service";
+        return "unity";
     }
 
-    @RequestMapping("/service22")
+    @RequestMapping("/mobile")
     public String home2() {
-        return "Hello World";
+        return "mobile";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
